@@ -2,24 +2,30 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-
+import './index.css'
 
 const IndexPage = ({data }) => (
   <Layout>
-  <h1>Hi people</h1>
-  <p>Welcome to your new Gatsby site.</p>
-  <p>Now go build something great.</p>
-  <ul>
+    
+    <div class="container">
     {data.allStrapiArticulo.edges.map(({ node }) => (
-  <li key={node.strapiId}>
-    <h2>
-      <Link to={`/${node.strapiId}`}>{node.titulo}</Link>
-    </h2>
-    <p>{node.descripcion}</p>
-  </li>
-))}
-</ul>
-  <Link to="/page-2/">Go to page 2</Link>
+          <div key={node.strapiId} class="card">
+            <div class="card-header centrar">
+              <Link to={`/${node.strapiId}`} class="defaultlink">
+                    <h1>
+                        {node.titulo}
+                    </h1> 
+                </Link>
+            </div>
+            <div class="card-body centrar">
+                <p>{node.extract}</p>
+            </div>
+            <div class="card-footer">
+              <Link to={`/${node.strapiId}`} class="go-to" >Ir </Link> 
+            </div>
+          </div>
+        ))}
+    </div>
 </Layout>
 )
 
@@ -32,6 +38,7 @@ export const pageQuery = graphql`
           strapiId
           titulo
           descripcion
+          extract
         }
       }
     }

@@ -1,0 +1,48 @@
+.container{
+    width: 100%;
+}
+
+.card{
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.377);
+    border-radius: 0.5rem ;
+    overflow: hidden;
+}
+.centrar{
+    display: flex;
+    justify-content: center;
+    
+
+}
+.card-header{
+    background-color: rebeccapurple;
+   
+}
+.card-body{
+    padding-top:1rem;
+    color:gray;
+}
+.card-footer{
+    direction: rtl;
+    display: flex;
+    align-items: flex-end;
+}
+
+.defaultlink{
+    text-decoration: none;
+    color:white;
+}
+.go-to{
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    background-color: rebeccapurple;
+    width: 2.5rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: White;
+    border-radius: 0.25rem;
+}
